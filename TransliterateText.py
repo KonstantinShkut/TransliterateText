@@ -4,26 +4,25 @@
 import sublime
 import sublime_plugin
 
-
 class TransliterateTextCommand(sublime_plugin.TextCommand):
 
     def run(self, edit, dictionary_file):
         s = sublime.load_settings(dictionary_file)
         dictionary = s.get('chars_mapping')
 
-        # Some text selected
+        # Some text is selected
         if not self.view.sel()[0].empty():
 
+            # Go throught selections
             selections = self.view.sel()
             for sel in selections:
                 selection_text = self.view.substr(sel)
                 self.view.replace(edit, sel, self.transliterateText(selection_text, dictionary))
 
-        # Nothing selected
+        # Nothing is selected
         else :
 
             # Get entire view
-            # region = sublime.Region(0, self.view.size())
             sel = sublime.Region(0, self.view.size())
             selection_text = self.view.substr(sel)
             self.view.replace(edit, sel, self.transliterateText(selection_text, dictionary))
