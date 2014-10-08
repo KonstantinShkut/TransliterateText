@@ -1,0 +1,9 @@
+[
+    {
+        "caption": "Transliterate Text: Russian Cyrillic (GOST Р52535.1-2006)",
+        "command": "transliterate_text", "args":
+        {
+            "dictionary_file": "gost.52535.1-2006.dict"
+        }
+    }
+]

@@ -1,0 +1,9 @@
+[
+    {
+        "caption": "Transliterate Text: Cyrillic (ICAO Doc 9303 Part 1 Volume 1)",
+        "command": "transliterate_text", "args":
+        {
+            "dictionary_file": "icao.doc.9303.p1.v1.dict"
+        }
+    }
+]
